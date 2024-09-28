@@ -1,0 +1,100 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container Layout */
+.container {
+    display: grid;
+    gap: 10px;
+}
+
+/* General Styling */
+header {
+    background-color: #3f7fbf;
+    padding: 20px;
+    text-align: center;
+    color: white;
+}
+
+.content {
+    background-color: #e8e8e8;
+    padding: 20px;
+    text-align: center;
+}
+
+.signup {
+    background-color: #f1a94e;
+    padding: 20px;
+    text-align: center;
+}
+
+.feature {
+    padding: 20px;
+    text-align: center;
+}
+
+.feature-1 {
+    background-color: #f56f6f;
+}
+
+.feature-2 {
+    background-color: #4fc3b3;
+}
+
+/* Mobile View (up to 600px) */
+@media (max-width: 600px) {
+    .container {
+        grid-template-areas:
+            "header"
+            "content"
+            "signup"
+            "feature1"
+            "feature2";
+        grid-template-columns: 1fr;
+    }
+
+    .header { grid-area: header; }
+    .content { grid-area: content; }
+    .signup { grid-area: signup; }
+    .feature-1 { grid-area: feature1; }
+    .feature-2 { grid-area: feature2; }
+}
+
+/* Tablet View (601px - 1024px) */
+@media (min-width: 601px) and (max-width: 1024px) {
+    .container {
+        grid-template-areas:
+            "header header"
+            "content content"
+            "signup signup"
+            "feature1 feature2";
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .header { grid-area: header; }
+    .content { grid-area: content; }
+    .signup { grid-area: signup; }
+    .feature-1 { grid-area: feature1; }
+    .feature-2 { grid-area: feature2; }
+}
+
+/* Desktop View (1025px and up) */
+@media (min-width: 1025px) {
+    .container {
+        grid-template-areas:
+            "header header"
+            "feature1 feature2"
+            "signup signup"
+            "content content";
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .header { grid-area: header; }
+    .content { grid-area: content; }
+    .signup { grid-area: signup; }
+    .feature-1 { grid-area: feature1; }
+    .feature-2 { grid-area: feature2; }
+}
